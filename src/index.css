@@ -1,69 +1,74 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  border: 4px solid black;
+  /* width: 100vw; */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.input-container {
+  width: 40vw;
+  background-color: beige;
+  overflow: scroll;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.output-container {
+  width: 60vw;
+  background-color: bisque;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.output-container,
+.input-container {
+  height: 100vh;
+}
+
+.form-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > label {
+  padding: 10px;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: 2px solid rgb(156, 156, 142);
+  border-radius: 10px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 4px solid violet;
+}
+
+input {
+  padding: 10px;
+}
+
+.btn-container {
+  /* border: 1px solid black; */
+  justify-content: flex-end;
+  display: flex;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 5px 20px;
+  min-width: 100px;
+  background-color: rgb(33, 227, 33);
+  color: rgb(126, 66, 66);
+  border-radius: 10px;
+  border: none;
+}
+
+.button:hover {
+  background-color: rgb(23, 154, 23);
+  color: rgb(255, 255, 255);
 }
