@@ -1,7 +1,6 @@
-import { CvInputContainer, CvOutputContainer } from "./components/Container.jsx"
+import { CvInputContainer, CvOutputContainer } from "./components/Containers.jsx"
 
 function App() {
-
   return (
     <>
     <CvInputContainer>

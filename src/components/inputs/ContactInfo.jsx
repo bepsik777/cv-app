@@ -13,8 +13,6 @@ export default function ContactInfo() {
       <input type="text" name="github" id="github" />
       <label htmlFor="linkedin">Linkedin:</label>
       <input type="text" name="linkedin" id="linkedin" />
-      <label htmlFor="website">Website:</label>
-      <input type="text" name="website" id="website" />
       <div className="btn-container">
         <button className="update-button button">Update</button>
       </div>
