@@ -97,6 +97,8 @@ input {
 
 .output.basic-info {
   padding: 15px;
+  flex-wrap: wrap; 
+  /* Change it so long names wrap */
 }
 
 .summary {
@@ -182,8 +184,3 @@ input {
   list-style: none;
 }
 
-@media (max-width: 480px) {
-  #root {
-    flex-direction: column;
-  }
-}

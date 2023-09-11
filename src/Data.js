@@ -32,10 +32,12 @@ const experienceData = [
   },
 ];
 
-const skills = [
+const skillsData = [
   "Alchemy",
   "Transmutation",
   "Black magic basics",
   "Strong communication",
   "Team player"
 ];
+
+export {basicInfoData, contactData, educationData, experienceData, skillsData}
