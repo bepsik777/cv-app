@@ -1,12 +1,12 @@
-export default function SkillInfo() {
+export default function SkillInfo({onAdd}) {
     return (
-        <form action="#" className="skill-info form-container">
+        <form action="#" className="skill-info form-container" onSubmit={onAdd}>
             <h2>Skills</h2>
             <hr />
             <label htmlFor="skills"></label>
             <input type="text" name="skills" id="skills" />
             <div className="btn-container">
-                <button className="button">Update</button>
+                <button className="button">Add</button>
             </div>
         </form>
     )

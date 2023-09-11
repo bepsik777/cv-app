@@ -12,14 +12,15 @@ import SkillOutput from "./components/outputs/SkillsInfoOutput.jsx";
 import {
   basicInfoData,
   contactData,
-  educationData,
-  experienceData,
-  skillsData,
 } from "./Data.js";
 
 function App() {
   const [basicData, setBasicData] = useState(basicInfoData);
   const [contact, setContact] = useState(contactData);
+  const [eduData, setEduData] = useState([])
+  const [expInfo, setExpInfo] = useState([])
+  const [skillInfo, setSkillInfo] = useState([])
+
 
   function getInputs(form) {
     const childrens = Array.from(form.childNodes);
@@ -43,14 +44,35 @@ function App() {
     func(newObj);
   }
 
+  const onAdd = (e, func, data) => {
+    e.preventDefault()
+    const inputs = getInputs(e.target)
+    const newObj = {}
+
+    inputs.forEach(input => {
+      newObj[input.name] = input.value
+      input.value = ''
+    })
+
+    func([...data, newObj])
+  }
+
+  const onAddSkill = (e, func, data) => {
+    e.preventDefault()
+    const inputs = getInputs(e.target)
+
+    func([...data, inputs[0].value])
+    inputs[0].value = ''
+  }
+
   return (
     <>
       <div className="input-container">
         <BasicInfo onUpdate={(e) => onUpdate(e, setBasicData, basicData)} />
-        <ContactInfo />
-        <EducationInfo />
-        <WorkExpInfo />
-        <SkillInfo />
+        <ContactInfo onUpdate={(e) => onUpdate(e, setContact, contact)}/>
+        <EducationInfo onAdd={(e) => onAdd(e, setEduData, eduData)}/>
+        <WorkExpInfo onAdd={(e) => onAdd(e, setExpInfo, expInfo)}/>
+        <SkillInfo onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)}/>
       </div>
       <div className="output-container">
         <div className="cv-container">
@@ -60,12 +82,18 @@ function App() {
             title={basicData.title}
             about={basicData.about}
           />
-          <ContactInfoOutput />
+          <ContactInfoOutput 
+            email={contact.email}
+            phoneNumber={contact.phoneNumber}
+            location={contact.location}
+            githubUrl={contact.githubUrl}
+            linkedinUrl={contact.linkedinUrl}
+          />
           <div className="education-experience-container">
-            <EducationOutput />
-            <ExperienceOutput />
+            <EducationOutput eduData={eduData}/>
+            <ExperienceOutput expInfo={expInfo}/>
           </div>
-          <SkillOutput />
+          <SkillOutput skillInfo={skillInfo}/>
         </div>
       </div>
     </>

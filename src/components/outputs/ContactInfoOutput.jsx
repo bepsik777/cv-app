@@ -1,4 +1,4 @@
-export default function ContactInfoOutput() {
+export default function ContactInfoOutput({email, phoneNumber, location, githubUrl, linkedinUrl}) {
   return (
     <div className="output contact-info">
       <ul className="contact-list">
@@ -27,7 +27,7 @@ export default function ContactInfoOutput() {
               </g>
             </svg>
           </span>
-          <span>bepsik777@gmail.com</span>
+          <span>{email}</span>
         </li>
         <li>
           <span>
@@ -48,7 +48,7 @@ export default function ContactInfoOutput() {
               />
             </svg>
           </span>
-          <span>690 375 985</span>
+          <span>{phoneNumber}</span>
         </li>
         <li>
           <svg
@@ -73,7 +73,7 @@ export default function ContactInfoOutput() {
               d="M17.5 9.5c0 3.038-2 6.5-5.5 10.5-3.5-4-5.5-7.462-5.5-10.5a5.5 5.5 0 1111 0z"
             />
           </svg>
-          <span>Warsaw, PL</span>
+          <span>{location}</span>
         </li>
         <li>
           <span>
@@ -88,7 +88,7 @@ export default function ContactInfoOutput() {
               </g>
             </svg>
           </span>
-          <span>www.github.com/bepsik777</span>
+          <span>{githubUrl}</span>
         </li>
         <li>
           <span>
@@ -96,7 +96,7 @@ export default function ContactInfoOutput() {
               <path d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"></path>
             </svg>
           </span>
-         <span>www.linkedin.com/alex</span>
+         <span>{linkedinUrl}</span>
         </li>
       </ul>
     </div>

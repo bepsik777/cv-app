@@ -1,19 +1,26 @@
-export default function SkillOutput() {
+export default function SkillOutput({skillInfo}) {
+  const isSkillInfo = skillInfo.length !== 0
   return (
     <div className="skills output">
       <h3>Skills</h3>
       <hr />
       <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
-        <li>Skill 4</li>
-        <li>Skill 5</li>
-        <li>Skill 6</li>
-        <li>Skill 7</li>
-        <li>Skill 8</li>
+      {isSkillInfo ? (
+        skillInfo.map((data) => (
+          <li key={data}>{data}</li>
+        ))
+      ) : (
+        <>
+        <li>Alchemy</li>
+        <li>Transmutation</li>
+        <li>Black magic basics</li>
+        <li>Strong communication</li>
+        <li>Team player</li>
+        </>
+      )}
       </ul>
     </div>
   );
 }
+
 

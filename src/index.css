@@ -20,6 +20,7 @@
 }
 
 .output-container {
+  min-height: 100vh;
   font-family: var(--system-ui);
   width: 60vw;
   background-color: bisque;
@@ -28,7 +29,6 @@
   align-items: center;
 }
 
-.output-container,
 .input-container {
   height: 100vh;
 }

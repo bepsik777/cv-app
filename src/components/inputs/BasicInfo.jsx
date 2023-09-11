@@ -4,7 +4,7 @@ export default function BasicInfo({onUpdate}) {
 
 
   return (
-    <form action="#" className="basic-info form-container" onSubmit={(e) => onUpdate(e)}>
+    <form action="#" className="basic-info form-container" onSubmit={onUpdate}>
       <h2>Basic Info</h2>
       <hr />
       <label htmlFor="firstName"> First Name </label>
