@@ -1,8 +1,17 @@
-export default function WorkExpInfo({ onAdd }) {
+export default function WorkExpInfo({ onAdd, data }) {
+  const isData = data.length !== 0;
   return (
     <form action="#" className="education-info form-container" onSubmit={onAdd}>
       <h2>Work Experience</h2>
       <hr />
+      {isData
+        ? data.map((el) => (
+            <div className="data-added" key={el.company}>
+              {el.company}
+              <span className="data-delete-button">x</span>
+            </div>
+          ))
+        : null}
       <label htmlFor="company">Company:</label>
       <input type="text" name="company" id="company" required />
       <label htmlFor="position">Position:</label>

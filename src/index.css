@@ -45,6 +45,17 @@
   padding: 10px;
 }
 
+.data-added {
+  display: flex;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  gap: 20px;
+  width:max-content;
+  background-color: violet;
+  color: rgb(255, 255, 255);
+}
+
 input,
 textarea {
   background: transparent;
@@ -93,7 +104,6 @@ input {
   height: 100vh;
   background-color: rgb(245, 239, 239);
 }
-/* BASIC INFO OUTPUT */
 
 .output.basic-info {
   padding: 15px;

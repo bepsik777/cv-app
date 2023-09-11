@@ -70,9 +70,9 @@ function App() {
       <div className="input-container">
         <BasicInfo onUpdate={(e) => onUpdate(e, setBasicData, basicData)} />
         <ContactInfo onUpdate={(e) => onUpdate(e, setContact, contact)}/>
-        <EducationInfo onAdd={(e) => onAdd(e, setEduData, eduData)}/>
-        <WorkExpInfo onAdd={(e) => onAdd(e, setExpInfo, expInfo)}/>
-        <SkillInfo onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)}/>
+        <EducationInfo onAdd={(e) => onAdd(e, setEduData, eduData)} data={eduData}/>
+        <WorkExpInfo onAdd={(e) => onAdd(e, setExpInfo, expInfo)} data={expInfo}/>
+        <SkillInfo onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)} data={skillInfo}/>
       </div>
       <div className="output-container">
         <div className="cv-container">
