@@ -56,6 +56,13 @@
   color: rgb(255, 255, 255);
 }
 
+.data-delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
 input,
 textarea {
   background: transparent;

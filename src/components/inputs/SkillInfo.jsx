@@ -1,4 +1,4 @@
-export default function SkillInfo({ onAdd, data }) {
+export default function SkillInfo({ onAdd, data, deleteFunc }) {
   const isData = data.length !== 0;
   return (
     <form action="#" className="skill-info form-container" onSubmit={onAdd}>
@@ -6,9 +6,9 @@ export default function SkillInfo({ onAdd, data }) {
       <hr />
       {isData
         ? data.map((el) => (
-            <div className="data-added" key={el}>
+            <div className="data-added" key={el} id={el}>
               {el}
-              <span className="data-delete-button">x</span>
+              <button className="data-delete-button" onClick={deleteFunc}>x</button>
             </div>
           ))
         : null}

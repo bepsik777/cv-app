@@ -1,4 +1,4 @@
-export default function EducationInfo({ onAdd, data }) {
+export default function EducationInfo({ onAdd, data, deleteFunc }) {
   const isData = data.length !== 0;
   return (
     <form action="#" className="education-info form-container" onSubmit={onAdd}>
@@ -6,9 +6,9 @@ export default function EducationInfo({ onAdd, data }) {
       <hr />
       {isData
         ? data.map((el) => (
-            <div className="data-added" key={el.instituion}>
+            <div className="data-added" key={el.instituion} id={el.institution}>
               {el.institution}
-              <span className="data-delete-button">x</span>
+              <span className="data-delete-button" onClick={deleteFunc}>x</span>
             </div>
           ))
         : null}
