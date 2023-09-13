@@ -201,3 +201,24 @@ input {
   list-style: none;
 }
 
+/* EDIT FORM */
+
+.edit-form {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 30vw;
+  height: 80vh;
+  border: 3px solid black;
+  left: calc(50% - 15vw);
+  top: calc(50% - 40vh);
+  background-color: white;
+}
+
+.edit-form > label {
+  font-size: 2rem;
+  color: black
+}

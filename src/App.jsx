@@ -9,18 +9,14 @@ import ContactInfoOutput from "./components/outputs/contactInfoOutput.jsx";
 import EducationOutput from "./components/outputs/EducationInfoOutput.jsx";
 import ExperienceOutput from "./components/outputs/ExperienceInfoOutput.jsx";
 import SkillOutput from "./components/outputs/SkillsInfoOutput.jsx";
-import {
-  basicInfoData,
-  contactData,
-} from "./Data.js";
+import { basicInfoData, contactData } from "./Data.js";
 
 function App() {
   const [basicData, setBasicData] = useState(basicInfoData);
   const [contact, setContact] = useState(contactData);
-  const [eduData, setEduData] = useState([])
-  const [expInfo, setExpInfo] = useState([])
-  const [skillInfo, setSkillInfo] = useState([])
-
+  const [eduData, setEduData] = useState([]);
+  const [expInfo, setExpInfo] = useState([]);
+  const [skillInfo, setSkillInfo] = useState([]);
 
   function getInputs(form) {
     const childrens = Array.from(form.childNodes);
@@ -45,47 +41,62 @@ function App() {
   }
 
   const onAdd = (e, func, data) => {
-    e.preventDefault()
-    const inputs = getInputs(e.target)
-    const newObj = {}
+    e.preventDefault();
+    const inputs = getInputs(e.target);
+    const newObj = {};
 
-    inputs.forEach(input => {
-      newObj[input.name] = input.value
-      input.value = ''
-    })
+    inputs.forEach((input) => {
+      newObj[input.name] = input.value;
+      input.value = "";
+    });
 
-    func([...data, newObj])
-  }
+    func([...data, newObj]);
+  };
 
   const onAddSkill = (e, func, data) => {
-    e.preventDefault()
-    const inputs = getInputs(e.target)
+    e.preventDefault();
+    const inputs = getInputs(e.target);
 
-    func([...data, inputs[0].value])
-    inputs[0].value = ''
-  }
+    func([...data, inputs[0].value]);
+    inputs[0].value = "";
+  };
 
   const deleteEntry = (e, func, data) => {
-    e.preventDefault()
-    const key = e.target.parentElement.id
-    const newArr = data.filter(el => {
-      if (el.company) return el.company !== key
-      if (el.institution) return el.institution !== key
-      return el !== key
-    })
-    console.log(newArr)
-    console.log(key)
-    func(newArr)
-  }
+    e.preventDefault();
+    const key = e.target.parentElement.id;
+    const newArr = data.filter((el) => {
+      if (el.company) return el.company !== key;
+      if (el.institution) return el.institution !== key;
+      return el !== key;
+    });
+    console.log(newArr);
+    console.log(key);
+    func(newArr);
+  };
+
+
 
   return (
     <>
       <div className="input-container">
         <BasicInfo onUpdate={(e) => onUpdate(e, setBasicData, basicData)} />
-        <ContactInfo onUpdate={(e) => onUpdate(e, setContact, contact)}/>
-        <EducationInfo onAdd={(e) => onAdd(e, setEduData, eduData)} data={eduData} deleteFunc={(e) => deleteEntry(e, setEduData, eduData)}/>
-        <WorkExpInfo onAdd={(e) => onAdd(e, setExpInfo, expInfo)} data={expInfo} deleteFunc={(e) => deleteEntry(e, setExpInfo, expInfo)}/>
-        <SkillInfo onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)} data={skillInfo} deleteFunc={(e) => deleteEntry(e, setSkillInfo, skillInfo)}/>
+        <ContactInfo onUpdate={(e) => onUpdate(e, setContact, contact)} />
+        <EducationInfo
+          onAdd={(e) => onAdd(e, setEduData, eduData)}
+          data={eduData}
+          deleteFunc={(e) => deleteEntry(e, setEduData, eduData)}
+        />
+        <WorkExpInfo
+          onAdd={(e) => onAdd(e, setExpInfo, expInfo)}
+          data={expInfo}
+          deleteFunc={(e) => deleteEntry(e, setExpInfo, expInfo)}
+        />
+        <SkillInfo
+          onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)}
+          data={skillInfo}
+          deleteFunc={(e) => deleteEntry(e, setSkillInfo, skillInfo)}
+          // showPopup={(e) => showPopup(e)}
+        />
       </div>
       <div className="output-container">
         <div className="cv-container">
@@ -95,7 +106,7 @@ function App() {
             title={basicData.title}
             about={basicData.about}
           />
-          <ContactInfoOutput 
+          <ContactInfoOutput
             email={contact.email}
             phoneNumber={contact.phoneNumber}
             location={contact.location}
@@ -103,10 +114,10 @@ function App() {
             linkedinUrl={contact.linkedinUrl}
           />
           <div className="education-experience-container">
-            <EducationOutput eduData={eduData}/>
-            <ExperienceOutput expInfo={expInfo}/>
+            <EducationOutput eduData={eduData} />
+            <ExperienceOutput expInfo={expInfo} />
           </div>
-          <SkillOutput skillInfo={skillInfo}/>
+          <SkillOutput skillInfo={skillInfo} />
         </div>
       </div>
     </>
@@ -114,8 +125,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-Create a function which would delete the data represented by violet div upon adding data
-*/
