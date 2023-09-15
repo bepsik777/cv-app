@@ -48,6 +48,7 @@
 .data-added {
   display: flex;
   margin-top: 10px;
+  margin-left: 20px;
   padding: 5px 10px;
   border-radius: 20px;
   gap: 20px;
@@ -56,10 +57,19 @@
   color: rgb(255, 255, 255);
 }
 
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .data-delete-button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-weight: 800;
   color: rgb(255, 255, 255);
 }
 
@@ -80,7 +90,6 @@ input {
 }
 
 .btn-container {
-  /* border: 1px solid black; */
   justify-content: flex-end;
   display: flex;
   margin-top: 20px;

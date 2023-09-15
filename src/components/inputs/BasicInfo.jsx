@@ -4,6 +4,7 @@ export default function BasicInfo({onUpdate}) {
 
 
   return (
+    <div className="form-container">
     <form action="#" className="basic-info form-container" onSubmit={onUpdate}>
       <h2>Basic Info</h2>
       <hr />
@@ -20,5 +21,6 @@ export default function BasicInfo({onUpdate}) {
         >Update</button>
       </div>
     </form>
+    </div>
   );
 }

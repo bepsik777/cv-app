@@ -28,33 +28,37 @@ export default function EditPopup({ el, deleteFunc, editFunc, data }) {
   return (
     <div className="data-added" key={id} id={type === "object" ? el[id] : el}>
       {type === "object" ? el[id] : el}
-      <button className="data-delete-button" onClick={deleteFunc}>
-        x
-      </button>
-      <button
-        className="data-delete-button"
-        onClick={(e) => handleEditPopup(e)}
-      >
-        e
-      </button>
+      <div className="icon-container">
+        <button className="data-delete-button" onClick={deleteFunc}>
+          x
+        </button>
+        <button
+          className="data-delete-button"
+          onClick={(e) => handleEditPopup(e)}
+        >
+          ✎
+        </button>
+      </div>
 
       {popupHidden === false ? (
         <form
           action="#"
           className="edit-form"
-          //   onSubmit={editFunc}
           onSubmit={(e) => handleEditButton(e)}
           data-index={indexOfEl}
         >
           {typeof keys === "object" ? (
             keys.map((propertie) => (
               <>
-                <label htmlFor="skill">{propertie}</label>
+                <label htmlFor="skill" key={propertie + "edit"}>
+                  {propertie}
+                </label>
                 <input
                   type="text"
                   name={propertie}
                   id="skill"
                   defaultValue={el[propertie]}
+                  key={propertie}
                   required
                 />
               </>

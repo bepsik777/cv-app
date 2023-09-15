@@ -156,7 +156,5 @@ function App() {
 export default App;
 
 /*
-- Edit function ready for work and and edu section, but probably won't work for skills section yet
-- I want to add hidePopup functionality into the edit function, but how do i do that, when state is in another module?
 - Make porządek with all the keys so console won't throw error at me
 */
