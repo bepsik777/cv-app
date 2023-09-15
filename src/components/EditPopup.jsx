@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-export default function EditPopup({ el, deleteFunc }) {
+export default function EditPopup({ el, deleteFunc, editFunc, data }) {
   const [popupHidden, setPopupHidden] = useState(true);
   let keys;
   let id;
+  const indexOfEl = data.indexOf(el)
   const type = typeof el
+  
   if (typeof el === "object") {
     keys = Object.keys(el);
     id = keys[0];
@@ -30,10 +32,13 @@ export default function EditPopup({ el, deleteFunc }) {
       >
         e
       </button>
+      
       {popupHidden === false ? (
         <form
           action="#"
           className="edit-form"
+          onSubmit={editFunc}
+          data-index={indexOfEl}
         >
           {typeof keys === "object" ? (
             keys.map((propertie) => (
@@ -41,7 +46,7 @@ export default function EditPopup({ el, deleteFunc }) {
                 <label htmlFor="skill">{propertie}</label>
                 <input
                   type="text"
-                  name="skills"
+                  name={propertie}
                   id="skill"
                   defaultValue={el[propertie]}
                   required

@@ -74,6 +74,26 @@ function App() {
     func(newArr);
   };
 
+  const editInfo = (e, func, data) => {
+    e.preventDefault()
+    const inputs = getInputs(e.target)
+    const newObject = {}
+    const index = e.target.dataset.index
+    
+    inputs.forEach(input => {
+      newObject[input.name] = input.value
+    })
+    
+    const newData = data
+    newData[index] = newObject
+    func([...newData])
+    // handleEditPopup(e)
+    console.log(data, 'data')
+    console.log(index, 'index')
+    console.log(data[index], 'target data')
+    console.log(newData, 'new data')
+  }
+
 
 
   return (
@@ -85,11 +105,15 @@ function App() {
           onAdd={(e) => onAdd(e, setEduData, eduData)}
           data={eduData}
           deleteFunc={(e) => deleteEntry(e, setEduData, eduData)}
+          editFunc={(e) => editInfo(e, setEduData, eduData)}
+
         />
         <WorkExpInfo
           onAdd={(e) => onAdd(e, setExpInfo, expInfo)}
           data={expInfo}
           deleteFunc={(e) => deleteEntry(e, setExpInfo, expInfo)}
+          editFunc={(e) => editInfo(e, setExpInfo, expInfo)}
+
         />
         <SkillInfo
           onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)}

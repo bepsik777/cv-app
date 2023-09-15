@@ -1,13 +1,28 @@
 import EditPopup from "../EditPopup.jsx";
 
-export default function EducationInfo({ onAdd, data, deleteFunc }) {
+export default function EducationInfo({
+  onAdd,
+  data,
+  deleteFunc,
+  editFunc,
+}) {
   const isData = data.length !== 0;
   return (
     <>
       <div className="form-container">
         <h2>Education</h2>
         <hr />
-        {isData ? data.map((el) => <EditPopup key={el} el={el} deleteFunc={deleteFunc}/>) : null}
+        {isData
+          ? data.map((el) => (
+              <EditPopup
+                key={el}
+                el={el}
+                deleteFunc={deleteFunc}
+                editFunc={editFunc}
+                data={data}
+              />
+            ))
+          : null}
         <form
           action="#"
           className="education-info form-container"

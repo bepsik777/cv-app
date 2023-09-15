@@ -1,6 +1,11 @@
 import EditPopup from "../EditPopup.jsx";
 
-export default function WorkExpInfo({ onAdd, data, deleteFunc }) {
+export default function WorkExpInfo({
+  onAdd,
+  data,
+  deleteFunc,
+  editFunc,
+}) {
   const isData = data.length !== 0;
   return (
     <>
@@ -9,7 +14,13 @@ export default function WorkExpInfo({ onAdd, data, deleteFunc }) {
         <hr />
         {isData
           ? data.map((el) => (
-              <EditPopup key={el} el={el} deleteFunc={deleteFunc} />
+              <EditPopup
+                key={el}
+                el={el}
+                deleteFunc={deleteFunc}
+                editFunc={editFunc}
+                data={data}
+              />
             ))
           : null}
 
