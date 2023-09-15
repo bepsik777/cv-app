@@ -1,6 +1,6 @@
 import EditPopup from "../EditPopup.jsx";
 
-export default function SkillInfo({ onAdd, data, deleteFunc }) {
+export default function SkillInfo({ onAdd, data, deleteFunc, editFunc }) {
   const isData = data.length !== 0;
 
   return (
@@ -8,7 +8,17 @@ export default function SkillInfo({ onAdd, data, deleteFunc }) {
       <div className="form-container">
         <h2>Skills</h2>
         <hr />
-        {isData ? data.map((el) => <EditPopup key={el} el={el} deleteFunc={deleteFunc}/>) : null}
+        {isData
+          ? data.map((el) => (
+              <EditPopup
+                key={el}
+                el={el}
+                deleteFunc={deleteFunc}
+                data={data}
+                editFunc={editFunc}
+              />
+            ))
+          : null}
         <form action="#" className="skill-info form-container" onSubmit={onAdd}>
           <label htmlFor="skills"></label>
           <input type="text" name="skills" id="skills" required />

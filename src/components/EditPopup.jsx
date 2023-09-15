@@ -4,9 +4,9 @@ export default function EditPopup({ el, deleteFunc, editFunc, data }) {
   const [popupHidden, setPopupHidden] = useState(true);
   let keys;
   let id;
-  const indexOfEl = data.indexOf(el)
-  const type = typeof el
-  
+  const indexOfEl = data.indexOf(el);
+  const type = typeof el;
+
   if (typeof el === "object") {
     keys = Object.keys(el);
     id = keys[0];
@@ -20,9 +20,14 @@ export default function EditPopup({ el, deleteFunc, editFunc, data }) {
     popupHidden ? setPopupHidden(false) : setPopupHidden(true);
   };
 
+  const handleEditButton = (e) => {
+    editFunc(e);
+    handleEditPopup(e);
+  };
+
   return (
-    <div className="data-added" key={id} id={type === 'object' ? el[id] :el}>
-      {type === 'object' ? el[id] : el}
+    <div className="data-added" key={id} id={type === "object" ? el[id] : el}>
+      {type === "object" ? el[id] : el}
       <button className="data-delete-button" onClick={deleteFunc}>
         x
       </button>
@@ -32,12 +37,13 @@ export default function EditPopup({ el, deleteFunc, editFunc, data }) {
       >
         e
       </button>
-      
+
       {popupHidden === false ? (
         <form
           action="#"
           className="edit-form"
-          onSubmit={editFunc}
+          //   onSubmit={editFunc}
+          onSubmit={(e) => handleEditButton(e)}
           data-index={indexOfEl}
         >
           {typeof keys === "object" ? (

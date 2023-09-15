@@ -75,26 +75,33 @@ function App() {
   };
 
   const editInfo = (e, func, data) => {
-    e.preventDefault()
-    const inputs = getInputs(e.target)
-    const newObject = {}
-    const index = e.target.dataset.index
-    
-    inputs.forEach(input => {
-      newObject[input.name] = input.value
-    })
-    
-    const newData = data
-    newData[index] = newObject
-    func([...newData])
+    e.preventDefault();
+    const inputs = getInputs(e.target);
+    const index = e.target.dataset.index;
+
+    // if input is skill input
+    if (inputs.length === 1) {
+      const newValue = inputs[0].value;
+      const newData = data;
+      newData[index] = newValue;
+      return func([...newData]);
+    }
+
+    const newObject = {};
+
+    inputs.forEach((input) => {
+      newObject[input.name] = input.value;
+    });
+
+    const newData = data;
+    newData[index] = newObject;
+    func([...newData]);
     // handleEditPopup(e)
-    console.log(data, 'data')
-    console.log(index, 'index')
-    console.log(data[index], 'target data')
-    console.log(newData, 'new data')
-  }
-
-
+    console.log(data, "data");
+    console.log(index, "index");
+    console.log(data[index], "target data");
+    console.log(newData, "new data");
+  };
 
   return (
     <>
@@ -106,20 +113,18 @@ function App() {
           data={eduData}
           deleteFunc={(e) => deleteEntry(e, setEduData, eduData)}
           editFunc={(e) => editInfo(e, setEduData, eduData)}
-
         />
         <WorkExpInfo
           onAdd={(e) => onAdd(e, setExpInfo, expInfo)}
           data={expInfo}
           deleteFunc={(e) => deleteEntry(e, setExpInfo, expInfo)}
           editFunc={(e) => editInfo(e, setExpInfo, expInfo)}
-
         />
         <SkillInfo
           onAdd={(e) => onAddSkill(e, setSkillInfo, skillInfo)}
           data={skillInfo}
           deleteFunc={(e) => deleteEntry(e, setSkillInfo, skillInfo)}
-          // showPopup={(e) => showPopup(e)}
+          editFunc={(e) => editInfo(e, setSkillInfo, skillInfo)}
         />
       </div>
       <div className="output-container">
@@ -149,3 +154,9 @@ function App() {
 }
 
 export default App;
+
+/*
+- Edit function ready for work and and edu section, but probably won't work for skills section yet
+- I want to add hidePopup functionality into the edit function, but how do i do that, when state is in another module?
+- Make porządek with all the keys so console won't throw error at me
+*/
