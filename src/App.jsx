@@ -155,6 +155,3 @@ function App() {
 
 export default App;
 
-/*
-- Make porządek with all the keys so console won't throw error at me
-*/

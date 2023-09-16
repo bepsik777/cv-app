@@ -1,8 +1,13 @@
-# React + Vite
+This is a cv creator app, made to practice the basics of react. 
+![App screenshot](src/assets/app-screenshot.png)
+The scope of what i practiced was:
+- Creating react components
+- Using props and passing them from components to components
+- Using state to manage the ui changes made by user
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app was made mostly to practice, and as such, i think it is ready. However, if at any point i would like to include it as a portfolio piece, there are some improvements i would like to add: 
+- Make the website mobile responsive, which it is not at the moment
+- Experiment with fonts and maybe choose one, that is not a system font. 
+- Refactor the react code AND the css code, as they are a huge bowl of spaghetti right now. 
+- Address the errors shown in the console when rendering the edit popup.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
