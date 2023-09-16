@@ -1,5 +1,6 @@
 :root {
-  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 * {
@@ -52,11 +53,10 @@
   padding: 5px 10px;
   border-radius: 20px;
   gap: 20px;
-  width:max-content;
+  width: max-content;
   background-color: violet;
   color: rgb(255, 255, 255);
 }
-
 
 .icon-container {
   display: flex;
@@ -123,7 +123,7 @@ input {
 
 .output.basic-info {
   padding: 15px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   /* Change it so long names wrap */
 }
 
@@ -176,7 +176,7 @@ input {
 .linkedin-icon,
 .github-icon {
   position: relative;
-  top: 1pcx
+  top: 1pcx;
 }
 
 .contact-list > li > span:nth-child(2) {
@@ -220,14 +220,15 @@ input {
   align-items: center;
   gap: 10px;
   width: 30vw;
-  height: 80vh;
-  border: 3px solid black;
+  min-height: 80vh;
+  border: 5px solid rgb(236, 25, 158);
+  border-radius: 10px;
   left: calc(50% - 15vw);
   top: calc(50% - 40vh);
-  background-color: white;
+  background-color: bisque;
 }
 
 .edit-form > label {
   font-size: 2rem;
-  color: black
+  color: black;
 }

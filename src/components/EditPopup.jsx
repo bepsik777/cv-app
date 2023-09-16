@@ -76,7 +76,7 @@ export default function EditPopup({ el, deleteFunc, editFunc, data }) {
             </>
           )}
 
-          <button className="edit-button">Edit</button>
+          <button className="button">Edit</button>
         </form>
       ) : null}
     </div>

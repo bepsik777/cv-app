@@ -10,4 +10,6 @@ This app was made mostly to practice, and as such, i think it is ready. However,
 - Experiment with fonts and maybe choose one, that is not a system font. 
 - Refactor the react code AND the css code, as they are a huge bowl of spaghetti right now. 
 - Address the errors shown in the console when rendering the edit popup.
+- Include an option to exit the edit popup without editing any existing data
+- Improve forms (Include form validation, template values, maybe regex in some inputs)
 
