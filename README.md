@@ -1,5 +1,9 @@
 This is a cv creator app, made to practice the basics of react. 
+
+
 ![App screenshot](src/assets/app-screenshot.png)
+
+
 The scope of what i practiced was:
 - Creating react components
 - Using props and passing them from components to components
