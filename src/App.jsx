@@ -5,7 +5,7 @@ import EducationInfo from "./components/inputs/EducationInfo.jsx";
 import WorkExpInfo from "./components/inputs/WorkExpInfo.jsx";
 import SkillInfo from "./components/inputs/SkillInfo.jsx";
 import BasicInfoOutput from "./components/outputs/BasicInfoOutput.jsx";
-import ContactInfoOutput from "./components/outputs/contactInfoOutput.jsx";
+import ContactInfoOutput from "./components/outputs/ContactInfoOutput.jsx";
 import EducationOutput from "./components/outputs/EducationInfoOutput.jsx";
 import ExperienceOutput from "./components/outputs/ExperienceInfoOutput.jsx";
 import SkillOutput from "./components/outputs/SkillsInfoOutput.jsx";
