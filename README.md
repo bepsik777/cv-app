@@ -12,4 +12,6 @@ This app was made mostly to practice, and as such, i think it is ready. However,
 - Address the errors shown in the console when rendering the edit popup.
 - Include an option to exit the edit popup without editing any existing data
 - Improve forms (Include form validation, template values, maybe regex in some inputs)
+- Include a dark mode
+- Include a way to change the output into a PDF and download it (maybe using https://react-pdf.org/)
 
